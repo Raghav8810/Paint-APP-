@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&family=Roboto&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,500&family=Poppins:wght@600&family=Roboto&family=Roboto+Mono&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color:rgb(24, 25, 24) ;
+}
+.container{
+    display: flex;
+ 
+    width: 100%;
+    max-width: 1120px;
+    gap: 10px;
+}
+h1{
+    position: absolute;
+    top: 7%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #121212;
+     padding: 5px 20px;
+     border-radius: 10px;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+section{
+    background: #fff;
+    border-radius:10px ;
+}
+.drawing-board{
+    
+    flex:1;
+}
+
+.tool-board{
+    width: 220px;
+    padding: 15px 22px 0;
+}
+.tool-board .row{
+    margin-bottom: 20px;
+
+}
+.row .options{
+    list-style: none;
+    margin: 10px 0 0 5px;
+}
+label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+img{
+    font-size: 1.2rem;
+}
+.list-option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 1.5rem
+}
+.list-option :where(span,label){
+    padding-left: 10px;
+    color: #5A6168;
+    cursor: pointer;
+}
+.list-option #fill-color{
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+}
+
+/* .list-option img:hover{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+
+} */
+.list-option:is(:hover, .active) img{
+    filter: invert(17%) sepia(90%) saturate(3000%) hue-rotate(900deg) brightness(100%) contrast(100%);
+ 
+}
+
+.list-option:is(:hover, .active) :where(span,label){
+    color: #d9172d;
+}
+
+.list-option #size-slider{
+    width: 100%;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.colors .options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.colors .list-option{
+
+    height: 20px;
+    width: 20px;
+
+    border-radius: 50%;
+    margin-top: 3px;
+    position: relative;
+}
+.colors .list-option.selected::before{
+    content: '';
+    position: absolute;
+    height: 12px;
+    width:12px;
+    background: inherit;
+    border:2px solid #fff;
+    border-radius: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.list-option #color-picker{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.colors .list-option:nth-child(1){
+    background-color: #ff6a00;
+}
+.colors .list-option:nth-child(2){
+    background-color: #000;
+}
+.colors .list-option:nth-child(3){
+    background-color: #e72929;
+}
+.colors .list-option:nth-child(4){
+    background-color: #73f509;
+}
+.colors .list-option:nth-child(5){
+    background-color: #0010f6;
+}
+
+.buttons button{
+   width: 100%;
+   color: #fff;
+   border: none;
+   outline: none;
+   padding: 11px 0;
+   margin-bottom: 15px;
+   background: none;
+   border-radius: 5px;
+   font-size: 1rem;
+   cursor: pointer;
+}
+.buttons .clear{
+    color: #6C757D;
+    border: 1px solid #6C757D;
+    transition: all 0.3 ease;
+}
+.buttons .clear:hover{
+    color: #fff;
+     background: #6C757D;
+
+}
+.buttons .save{
+    background: #5e49eb;
+    border: 1px solid #6C757D;
+    color: #fff;
+
+}
+
+.drawing-board canvas{
+    width: 100%;
+    height: 100%;
+    
+}
